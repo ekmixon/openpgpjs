@@ -36,7 +36,7 @@
   "scripts": {
     "build": "rollup --config",
     "build-test": "npm run build --build-only=test",
-    "prepare": "npm run build",
+    "prepare": "npm run snyk-protect && npm run build",
     "test": "mocha --require esm --timeout 120000 test/unittests.js",
     "test-type-definitions": "tsc test/typescript/definitions.ts && node test/typescript/definitions.js",
     "start": "http-server",
@@ -48,7 +48,8 @@
     "docs": "jsdoc --configure .jsdocrc.js --destination docs --recurse README.md src",
     "preversion": "rm -rf dist docs node_modules && npm install && npm test",
     "version": "npm run docs && git add -A docs",
-    "postversion": "git push && git push --tags && npm publish"
+    "postversion": "git push && git push --tags && npm publish",
+    "snyk-protect": "snyk protect"
   },
   "devDependencies": {
     "@openpgp/asmcrypto.js": "^2.3.2",
@@ -67,7 +68,7 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "email-addresses": "3.1.0",
-    "eslint": "^4.17.0",
+    "eslint": "^5.0.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-chai-friendly": "^0.5.0",
@@ -79,18 +80,20 @@
     "karma-browserstack-launcher": "^1.6.0",
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
-    "mocha": "^5.0.0",
+    "mocha": "^6.2.3",
     "nyc": "^14.1.1",
     "rollup": "^2.38.5",
-    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-terser": "^5.3.1",
     "sinon": "^4.3.0",
     "typescript": "^4.1.2"
   },
   "dependencies": {
-    "asn1.js": "^5.0.0"
+    "asn1.js": "^5.0.0",
+    "snyk": "^1.662.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/openpgpjs/openpgpjs"
-  }
+  },
+  "snyk": true
 }
