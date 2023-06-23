@@ -53,7 +53,7 @@
   "devDependencies": {
     "@openpgp/asmcrypto.js": "^2.3.2",
     "@openpgp/elliptic": "^6.5.1",
-    "@openpgp/jsdoc": "^3.6.4",
+    "@openpgp/jsdoc": "^3.6.11",
     "@openpgp/pako": "^1.0.12",
     "@openpgp/seek-bzip": "^1.0.5-git",
     "@openpgp/tweetnacl": "^1.0.3",
@@ -80,7 +80,7 @@
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
     "mocha": "^5.0.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.0.0",
     "rollup": "^2.38.5",
     "rollup-plugin-terser": "^5.3.0",
     "sinon": "^4.3.0",
